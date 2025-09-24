@@ -1,17 +1,17 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-	class Article extends Model {
+	class Tags extends Model {
 		/**
 		 * Helper method for defining associations.
 		 * This method is not a part of Sequelize lifecycle.
 		 * The `models/index` file will call this method automatically.
 		 */
 		static associate(models) {
-			this.belongsTo(models.Author, { foreignKey: "author_id" });
+			// define association here
 		}
 	}
-	Article.init(
+	Tags.init(
 		{
 			id: {
 				type: DataTypes.INTEGER,
@@ -20,16 +20,11 @@ module.exports = (sequelize, DataTypes) => {
 				autoIncrement: true,
 			},
 			name: { type: DataTypes.STRING, allowNull: false },
-			slug: { type: DataTypes.STRING, allowNull: false, unique: true },
-			image: { type: DataTypes.TEXT, allowNull: false },
-			body: { type: DataTypes.TEXT, allowNull: false },
-			published: { type: DataTypes.DATE, allowNull: false },
-			author_id: { type: DataTypes.INTEGER },
 		},
 		{
 			sequelize,
-			modelName: "Article",
+			modelName: "Tags",
 		}
 	);
-	return Article;
+	return Tags;
 };

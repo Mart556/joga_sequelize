@@ -16,6 +16,7 @@ module.exports = {
 		await queryInterface.changeColumn("Articles", "slug", {
 			type: Sequelize.STRING,
 			allowNull: false,
+			unique: true,
 		});
 		await queryInterface.changeColumn("Articles", "image", {
 			type: Sequelize.STRING,

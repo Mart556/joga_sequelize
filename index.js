@@ -1,5 +1,5 @@
-import express from "express";
-import dotenv from "dotenv";
+const express = require("express");
+const dotenv = require("dotenv");
 
 dotenv.config();
 
@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-import { Sequelize } from "sequelize";
+const { Sequelize } = require("sequelize");
 const sequelize = new Sequelize(
 	process.env.DB_NAME,
 	process.env.DB_USER,

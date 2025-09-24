@@ -3,13 +3,14 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"type": "commonjs",
 	"scripts": {
 		"dev": "nodemon index.js"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"packageManager": "pnpm@10.15.1",
+	"packageManager": "pnpm@10.17.1",
 	"dependencies": {
 		"dotenv": "^17.2.2",
 		"express": "^5.1.0",

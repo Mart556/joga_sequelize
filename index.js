@@ -29,9 +29,8 @@ sequelize
 		console.error("Unable to connect to the database:", err);
 	});
 
-app.get("/", (req, res) => {
-	res.send("Hello, World!");
-});
+const articleRoutes = require("./routes/article");
+app.use("/articles", articleRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
